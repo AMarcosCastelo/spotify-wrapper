@@ -1,0 +1,51 @@
+{
+  "name": "spotify-wrapper",
+  "version": "1.0.0",
+  "description": "A wrapper to work with the Spotify Web API.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint && npm run test:coverage",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "check-coverage": true,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AMarcosCastelo/spotify-wrapper.git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "Antonio Marcos Castelo <marcos-12marcos@hotmail.com> (https://github.com/AMarcosCastelo)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AMarcosCastelo/spotify-wrapper/issues"
+  },
+  "homepage": "https://github.com/AMarcosCastelo/spotify-wrapper#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "husky": "^3.0.8",
+    "mocha": "^6.2.1",
+    "nyc": "^14.1.1"
+  }
+}
