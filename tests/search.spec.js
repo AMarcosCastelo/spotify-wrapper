@@ -4,20 +4,19 @@ import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 
-
 import {
   search,
   searchAlbuns,
   searchArtists,
   searchTracks,
   searchPlaylists,
-} from '../src/main';
+} from '../src/search';
 
 chai.use(sinonChai);
 
 global.fetch = require('node-fetch');
 
-describe('Sportify Wrapper', () => {
+describe('Search', () => {
   let fetchedStub;
 
   // Hooks
