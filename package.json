@@ -5,9 +5,12 @@
   "main": "src/index.js",
   "scripts": {
     "clear": "rimraf lib",
-    "build": "./node_modules/.bin/babel --out-dir lib src",
-    "build:all": "npm run clear && npm run build",
+    "build": "npx babel --out-dir lib src",
+    "build:clear": "npm run clear && npm run build",
     "build:watch": "npm run build -- --watch",
+    "build:umd": "webpack --mode development --output-filename spotify-wrapper.umd.js",
+    "build:umd:min": "./node_modules/.bin/webpack --mode production --output-filename spotify-wrapper.umd.min.js",
+    "build:all": "npm run build:clear && npm run build:umd && npm run build:umd:min",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint && npm run test:coverage",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
@@ -42,8 +45,11 @@
   },
   "homepage": "https://github.com/AMarcosCastelo/spotify-wrapper#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^7.1.5",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "eslint": "^6.5.1",
@@ -55,6 +61,9 @@
     "nyc": "^14.1.1",
     "rimraf": "^3.0.0",
     "sinon": "^7.5.0",
-    "sinon-chai": "^3.3.0"
-  }
+    "sinon-chai": "^3.3.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {}
 }
