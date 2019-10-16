@@ -1,3 +1,9 @@
-const presets = ['@babel/preset-env'];
+module.exports = (api) => {
+  api.cache(true);
 
-module.exports = { presets };
+  const presets = ['@babel/preset-env'];
+
+  return {
+    presets,
+  };
+};
