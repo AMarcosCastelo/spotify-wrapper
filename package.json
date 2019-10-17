@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "clear": "rimraf lib",
-    "build": "npx babel --out-dir lib src",
+    "build": "./node_modules/.bin/babel --out-dir lib src",
     "build:clear": "npm run clear && npm run build",
     "build:watch": "npm run build -- --watch",
     "build:umd": "webpack --mode development --output-filename spotify-wrapper.umd.js",
