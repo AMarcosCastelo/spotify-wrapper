@@ -111,26 +111,26 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getAlbumsTracks = exports.getAlbums = exports.getAlbum = void 0;
 
-var _config = _interopRequireDefault(__webpack_require__(/*! ./config */ "./src/config.js"));
+var _config = __webpack_require__(/*! ./config */ "./src/config.js");
 
 var _utils = _interopRequireDefault(__webpack_require__(/*! ./utils */ "./src/utils.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var getAlbum = function getAlbum(id) {
-  return fetch("".concat(_config["default"], "/albums/").concat(id)).then(_utils["default"]);
+  return fetch("".concat(_config.API_URL, "/albums/").concat(id), _config.header).then(_utils["default"]);
 };
 
 exports.getAlbum = getAlbum;
 
 var getAlbums = function getAlbums(ids) {
-  return fetch("".concat(_config["default"], "/albums/?ids=").concat(ids)).then(_utils["default"]);
+  return fetch("".concat(_config.API_URL, "/albums/?ids=").concat(ids), _config.header).then(_utils["default"]);
 };
 
 exports.getAlbums = getAlbums;
 
 var getAlbumsTracks = function getAlbumsTracks(id) {
-  return fetch("".concat(_config["default"], "/albums/").concat(id, "/tracks")).then(_utils["default"]);
+  return fetch("".concat(_config.API_URL, "/albums/").concat(id, "/tracks"), _config.header).then(_utils["default"]);
 };
 
 exports.getAlbumsTracks = getAlbumsTracks;
@@ -150,10 +150,20 @@ exports.getAlbumsTracks = getAlbumsTracks;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.header = exports.API_URL = void 0;
 var API_URL = 'https://api.spotify.com/v1';
-var _default = API_URL;
-exports["default"] = _default;
+exports.API_URL = API_URL;
+var token = 'BQAx6l0UVvINzY-zLUrjwO87oN6Abnp3VhJiPKFMeNTJoZ8W207wb6f6YuwOWnfJErSQ0DtK35J7qXvly6WId726Ebwk4MgjJ1zrmTWTGOdgH23ZeO4MOLGZx3vEI7OewsfdKnJgIkQgQPE28emjqTzm007HRcHTCLq9F8a688obfp3tFtEaXD0LCSBTaXEGeZOjuWzjfa_zlJT2C7KIXyF5IMmB5JDNPa1hsju3gNMzH5pQI8pfFeTu0Qg6dsVgQTPhxm-qb-g';
+var header = {
+  method: 'GET',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+    Authorization: "Bearer ".concat(token)
+  },
+  mode: 'cors'
+};
+exports.header = header;
 
 /***/ }),
 
@@ -199,14 +209,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.searchPlaylists = exports.searchTracks = exports.searchAlbuns = exports.searchArtists = exports.search = void 0;
 
-var _config = _interopRequireDefault(__webpack_require__(/*! ./config */ "./src/config.js"));
+var _config = __webpack_require__(/*! ./config */ "./src/config.js");
 
 var _utils = _interopRequireDefault(__webpack_require__(/*! ./utils */ "./src/utils.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var search = function search(query, type) {
-  return fetch("".concat(_config["default"], "/search?q=").concat(query, "&type=").concat(type)).then(_utils["default"]);
+  return fetch("".concat(_config.API_URL, "/search?q=").concat(query, "&type=").concat(type), _config.header).then(_utils["default"]);
 };
 
 exports.search = search;
