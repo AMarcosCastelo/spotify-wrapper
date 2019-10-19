@@ -13,7 +13,10 @@
 
   <script src="../dist/spotify-wrapper.umd.js"></script>
   <script>
-    const albuns = spotifyWrapper.searchAlbuns('Guns n Roses');
+    const spotify = new SpotifyWrapper({
+      token: "BQBHxfWs5RLED6dfF5nXu7D6O3-aV2hyv4sfvweVVOryu6HqMNXDiRTdq8fTz7MsB8qpXuy9lrnXpy-P1fLUUTAd0LBVufxgYvFxEl2hlJ13M50CWCczK4jZswxpyx0nISrBSSyuVCp5sMzDHuJnrUaTAKKfBLg-VU_1mIFH0Z_50tDI9C4XIuljlmUE4ZSLgdn_jb3xrtJdp7kOh-NSieL3bPWYANZh49E_28xjivJESooNJrb4uijnIQ8P1Y_PY8kXTklw6lI"
+    });
+    const albuns = spotify.search.albuns('Guns n Roses');
     const albumsEl = document.getElementById('albums');
 
 
