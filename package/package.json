@@ -1,5 +1,5 @@
 {
-  "name": "ma-spotify-wrapper",
+  "name": "spotify-wrapper",
   "version": "1.0.1",
   "description": "A wrapper to work with the Spotify Web API.",
   "main": "lib/index.js",
@@ -72,5 +72,7 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   },
-  "dependencies": {}
+  "dependencies": {
+    "user": "0.0.0"
+  }
 }

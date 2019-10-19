@@ -1,15 +1,13 @@
-const API_URL = 'https://api.spotify.com/v1';
+export const API_URL = 'https://api.spotify.com/v1';
 
-const token = 'BQAx6l0UVvINzY-zLUrjwO87oN6Abnp3VhJiPKFMeNTJoZ8W207wb6f6YuwOWnfJErSQ0DtK35J7qXvly6WId726Ebwk4MgjJ1zrmTWTGOdgH23ZeO4MOLGZx3vEI7OewsfdKnJgIkQgQPE28emjqTzm007HRcHTCLq9F8a688obfp3tFtEaXD0LCSBTaXEGeZOjuWzjfa_zlJT2C7KIXyF5IMmB5JDNPa1hsju3gNMzH5pQI8pfFeTu0Qg6dsVgQTPhxm-qb-g';
+const TOKEN_API = 'BQDfQfAiJkYAsG3ZNJE2oHsxZulIMofEtf7aoMWzCUsW_1D-KmHtuBG0h_vt8tf2Jf2xBowycaFPyQkCUwNiCbCDkr1CFYfyimMm6xhSpqaSQfXkOZIpwTrPKgFhfvhnCrE-hK1SeAXeHunIAzQrOoQCRyqM21Gcul5hawCQE6K3A-QJgaOEfc2m4wRAybWd_YesNewQPIZ6mxSerBrEIJPEPZ8XkOfrSBZzHBiubrLLocEkmEw9C7r_eXtZalbBTFpl9NpBPX4';
 
-const header = {
+export const header = {
   method: 'GET',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${token}`,
+    Authorization: `Bearer ${TOKEN_API}`,
   },
   mode: 'cors',
 };
-
-export { API_URL, header };
