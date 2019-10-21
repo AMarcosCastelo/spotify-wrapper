@@ -28,7 +28,7 @@ $ npm install ma-spotify-wrapper --save
 
 ```js
 // to import a specific method
-import SpotifyWrapper from 'spotify-wrapper';
+import SpotifyWrapper from 'ma-spotify-wrapper';
 
 const spotify = new SpotifyWrapper({
   token: 'YOUR_TOKEN_HERE'
@@ -41,7 +41,7 @@ spotify.search.artists('Incubus');
 ### CommonJS
 
 ```js
-const SpotifyWrapper = require('spotify-wrapper').default;
+const SpotifyWrapper = require('ma-spotify-wrapper').default;
 
 const spotify = new SpotifyWrapper({
   token: 'YOUR_TOKEN_HERE'
