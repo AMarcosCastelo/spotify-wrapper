@@ -6,7 +6,7 @@ export default {
   output: {
     path: Path.join(__dirname, 'dist'),
     libraryTarget: 'umd',
-    library: 'spotifyWrapper',
+    library: 'SpotifyWrapper',
   },
   devtool: 'source-map',
   module: {
